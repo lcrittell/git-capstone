@@ -20,3 +20,15 @@ jobs:
           test -f frontend/sets.html
           test -f frontend/about.html
           test -d frontend/css
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install backend dependencies
+        run: pip install -r backend/requirements.txt
+
+      - name: Run backend tests
+        working-directory: backend
+        run: python -m pytest tests
