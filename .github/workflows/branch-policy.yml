@@ -1,0 +1,33 @@
+name: Branch Policy
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate source branch
+        run: |
+          SOURCE="${{ github.head_ref }}"
+          TARGET="${{ github.base_ref }}"
+
+          if [ "$TARGET" = "develop" ]; then
+            if [[ ! "$SOURCE" =~ ^feature/.+ ]]; then
+              echo "Only feature/** branches can merge into develop."
+              echo "Source: $SOURCE"
+              exit 1
+            fi
+          fi
+
+          if [ "$TARGET" = "main" ]; then
+            if [ "$SOURCE" != "develop" ]; then
+              echo "Only develop can merge into main."
+              echo "Source: $SOURCE"
+              exit 1
+            fi
+          fi
+
+          echo "Branch policy passed."
