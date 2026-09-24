@@ -1,0 +1,22 @@
+name: Deploy Dev Test
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: dev
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check frontend
+        run: |
+          ls frontend
+          test -f frontend/index.html
