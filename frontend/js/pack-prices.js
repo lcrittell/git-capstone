@@ -2,7 +2,7 @@ async function loadPackPrices() {
 const priceList = document.querySelector(".pack-price-list");
 
 try {
-    const response = await fetch("https://mtg-pack-return-api.onrender.com/api/pack-prices");
+    const response = await fetch("__API_URL__");
 
     if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
