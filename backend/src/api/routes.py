@@ -8,7 +8,7 @@ def get_pack_prices():
     return [
         {
             "set": "Example Set",
-            "pack_price": 4.99,
+            "pack_price": 700.99,
             "average_card_value": 7.50,
             "estimated_return": 7.50,
         },
