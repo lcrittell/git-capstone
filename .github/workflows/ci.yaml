@@ -20,6 +20,7 @@ jobs:
           test -f frontend/sets.html
           test -f frontend/about.html
           test -d frontend/css
+          test -f frontend/pack-prices.html
 
       - name: Set up Python
         uses: actions/setup-python@v5
