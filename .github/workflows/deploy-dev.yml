@@ -12,3 +12,11 @@ jobs:
     environment:
       name: dev
 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check frontend
+        run: |
+          ls frontend
+          test -f frontend/index.html
