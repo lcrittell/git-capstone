@@ -7,7 +7,7 @@ if (!apiUrl) {
 }
 
 fs.writeFileSync(
-    "frontend/js/config.js",
+    "js/config.js",
     `window.API_URL = "${apiUrl}";\n`
 );
 
