@@ -17,3 +17,4 @@ jobs:
       - name: Check frontend files
         run: |
           test -f frontend/index.html
+          exit 1
