@@ -17,3 +17,7 @@ jobs:
       - name: Check frontend files
         run: |
           test -f frontend/index.html
+          test -f frontend/sets.html
+          test -f frontend/about.html
+          test -d frontend/css
+          test -d frontend/js
