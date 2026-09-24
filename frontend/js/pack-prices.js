@@ -2,7 +2,9 @@ async function loadPackPrices() {
 const priceList = document.querySelector(".pack-price-list");
 
 try {
-    const response = await fetch("__API_URL__");
+    const response = await fetch(
+        `${window.API_URL}/api/pack-prices`
+    );
 
     if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
