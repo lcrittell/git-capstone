@@ -54,9 +54,7 @@ jobs:
       - name: Push automation branch
         if: steps.changes.outputs.changed == 'true'
         run: |
-          git push origin automation/update-sealed-prices
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+            git push --force origin automation/update-sealed-prices
 
       - name: Create pull request
         if: steps.changes.outputs.changed == 'true'
