@@ -1,0 +1,19 @@
+name: Update Sealed Prices
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-sealed-prices:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout develop
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+
+      - name: Update sealed prices
+        uses: ./.github/actions/update-sealed-prices
+        env:
+          TCG_API: ${{ secrets.TCG_API }}
