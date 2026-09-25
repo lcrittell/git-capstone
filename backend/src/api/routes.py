@@ -23,19 +23,19 @@ def get_pack_prices():
         {
             "set": "The Hobbit",
             "pack_price": sealed_prices_by_set.get("The Hobbit"),
-            "average_card_value": 7.50,
-            "estimated_return": 7.50,
+            "average_card_value": 999.00,
+            "estimated_return": 999.00,
         },
         {
             "set": "Secrets of Strixhaven",
             "pack_price": sealed_prices_by_set.get("Secrets of Strixhaven"),
-            "average_card_value": 6.25,
-            "estimated_return": 6.25,
+            "average_card_value": 999.00,
+            "estimated_return": 999.00,
         },
         {
             "set": "Lorwyn Eclipsed",
             "pack_price": sealed_prices_by_set.get("Lorwyn Eclipsed"),
-            "average_card_value": 3.80,
-            "estimated_return": 3.80,
+            "average_card_value": 999.00,
+            "estimated_return": 999.00,
         },
     ]
