@@ -3,6 +3,7 @@ import json
 import os
 
 API_KEY = os.environ["TCG_API"]
+print(f"API key loaded: {bool(API_KEY)}")
 
 sets = [
     "The Hobbit",
