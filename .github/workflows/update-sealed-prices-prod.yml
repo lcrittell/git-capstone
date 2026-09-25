@@ -1,4 +1,4 @@
-name: Update Sealed Prices
+name: Update Sealed Prices - Production
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
 jobs:
   update-sealed-prices:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: prod
 
     steps:
       - name: Generate GitHub App token
@@ -16,15 +16,15 @@ jobs:
           app-id: ${{ vars.APP_ID_STAGING }}
           private-key: ${{ secrets.APP_STAGING_PRIVATE_KEY }}
 
-      - name: Checkout develop
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
-          ref: develop
+          ref: main
           token: ${{ steps.app-token.outputs.token }}
 
       - name: Create automation branch
         run: |
-          git checkout -b automation/update-sealed-prices
+          git checkout -b automation/update-sealed-prices-prod
 
       - name: Update sealed prices
         uses: ./.github/actions/update-sealed-prices
@@ -54,7 +54,7 @@ jobs:
       - name: Push automation branch
         if: steps.changes.outputs.changed == 'true'
         run: |
-            git push --force origin automation/update-sealed-prices
+          git push --force origin automation/update-sealed-prices-prod
 
       - name: Create pull request
         if: steps.changes.outputs.changed == 'true'
@@ -63,8 +63,8 @@ jobs:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           PR_URL=$(gh pr create \
-            --base develop \
-            --head automation/update-sealed-prices \
+            --base main \
+            --head automation/update-sealed-prices-prod \
             --title "Update sealed prices" \
             --body "Automated update of MTG sealed product prices.")
 

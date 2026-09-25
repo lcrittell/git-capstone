@@ -15,8 +15,8 @@ jobs:
           TARGET="${{ github.base_ref }}"
 
           if [ "$TARGET" = "develop" ]; then
-            if [[ ! "$SOURCE" =~ ^feature/.+ ]]; then
-              echo "Only feature/** branches can merge into develop."
+            if [[ ! "$SOURCE" =~ ^feature/.+ ]] && [[ "$SOURCE" != "automation/update-sealed-prices" ]]; then
+              echo "Only feature/** branches or the price updater can merge into develop."
               echo "Source: $SOURCE"
               exit 1
             fi

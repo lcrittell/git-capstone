@@ -3,6 +3,7 @@ import json
 import os
 
 API_KEY = os.environ["TCG_API"]
+print(f"API key loaded: {bool(API_KEY)}")
 
 sets = [
     "The Hobbit",
@@ -28,7 +29,7 @@ for set_name in sets:
     else:
         print(f"{set_name}: Play Booster Pack not found")
 
-with open("data/sealed_prices.json", "w") as file:
+with open("backend/data/sealed_prices.json", "w") as file:
     json.dump(pack_prices, file, indent=4)
 
 print("Pack prices updated.")
