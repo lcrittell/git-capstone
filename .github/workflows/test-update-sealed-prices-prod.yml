@@ -24,10 +24,10 @@ jobs:
 
       - name: Create automation branch
         run: |
-          git checkout -b automation/test-update-sealed-prices-prod
+          git checkout -b automation/update-sealed-prices-prod
 
       - name: Update sealed prices
-        uses: ./.github/actions/update-sealed-prices
+        uses: ./.github/actions/test-update-sealed-prices
         env:
           TCG_API: ${{ secrets.TCG_API }}
 
