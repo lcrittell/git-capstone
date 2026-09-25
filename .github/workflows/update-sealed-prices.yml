@@ -18,3 +18,14 @@ jobs:
         uses: ./.github/actions/update-sealed-prices
         env:
           TCG_API: ${{ secrets.TCG_API }}
+
+      - name: Commit updated prices
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add backend/data/sealed_prices.json
+
+          git diff --cached --quiet || git commit -m "Update sealed prices"
+
+          git push
