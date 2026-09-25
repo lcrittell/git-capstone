@@ -1,0 +1,20 @@
+name: Update Sealed Prices
+description: Updates sealed MTG product prices
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+
+    - name: Install dependencies
+      shell: bash
+      run: pip install -r backend/requirements.txt
+
+    - name: Update sealed prices
+      shell: bash
+      env:
+        TCG_API: ${{ env.TCG_API }}
+      run: python backend/update_sealed_prices.py

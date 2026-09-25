@@ -1,27 +1,41 @@
+import json
+from pathlib import Path
+
 from fastapi import APIRouter
 
 router = APIRouter(prefix="/api")
 
+DATA_FILE = Path(__file__).resolve().parents[2] / "data" / "sealed_prices.json"
+
 
 @router.get("/pack-prices")
 def get_pack_prices():
+
+    with open(DATA_FILE, "r") as file:
+        sealed_prices = json.load(file)
+
+    sealed_prices_by_set = {
+        product["set"]: product["market_price"]
+        for product in sealed_prices
+    }
+
     return [
         {
-            "set": "Example Set",
-            "pack_price": 700.99,
-            "average_card_value": 7.50,
-            "estimated_return": 7.50,
+            "set": "The Hobbit",
+            "pack_price": sealed_prices_by_set.get("The Hobbit"),
+            "average_card_value": 999.00,
+            "estimated_return": 999.00,
         },
         {
-            "set": "Test Set",
-            "pack_price": 4.99,
-            "average_card_value": 6.25,
-            "estimated_return": 6.25,
+            "set": "Secrets of Strixhaven",
+            "pack_price": sealed_prices_by_set.get("Secrets of Strixhaven"),
+            "average_card_value": 999.00,
+            "estimated_return": 999.00,
         },
         {
-            "set": "Sample Set",
-            "pack_price": 4.99,
-            "average_card_value": 3.80,
-            "estimated_return": 3.80,
+            "set": "Lorwyn Eclipsed",
+            "pack_price": sealed_prices_by_set.get("Lorwyn Eclipsed"),
+            "average_card_value": 999.00,
+            "estimated_return": 999.00,
         },
     ]
