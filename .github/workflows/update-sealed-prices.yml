@@ -6,6 +6,7 @@ on:
 jobs:
   update-sealed-prices:
     runs-on: ubuntu-latest
+    environment: staging
 
     steps:
       - name: Checkout develop
