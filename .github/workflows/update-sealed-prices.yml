@@ -21,7 +21,6 @@ jobs:
         with:
           ref: develop
           token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: false
 
       - name: Create automation branch
         run: |
