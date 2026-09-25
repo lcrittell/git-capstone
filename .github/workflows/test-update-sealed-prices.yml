@@ -1,4 +1,4 @@
-name: Update Sealed Prices
+name: Test Update Sealed Prices
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
           git checkout -b automation/update-sealed-prices
 
       - name: Update sealed prices
-        uses: ./.github/actions/update-sealed-prices
+        uses: ./.github/actions/test-update-sealed-prices
         env:
           TCG_API: ${{ secrets.TCG_API }}
 
