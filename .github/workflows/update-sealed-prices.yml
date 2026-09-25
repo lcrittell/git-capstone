@@ -49,3 +49,9 @@ jobs:
             --head automation/update-sealed-prices \
             --title "Update sealed prices" \
             --body "Automated update of MTG sealed product prices."
+      - name: Approve pull request
+        env:
+            GH_TOKEN: ${{ github.token }}
+            PR_URL: ${{ steps.create-pr.outputs.url }}
+        run: |
+            gh pr review "$PR_URL" --approve
