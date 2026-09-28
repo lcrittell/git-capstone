@@ -46,6 +46,8 @@ jobs:
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
 
       - name: Terraform Format Check
         working-directory: terraform
@@ -61,4 +63,20 @@ jobs:
 
       - name: Terraform Plan
         working-directory: terraform
-        run: terraform plan -detailed-exitcode
+        shell: pwsh
+        run: |
+          terraform plan -detailed-exitcode
+          $exitCode = $LASTEXITCODE
+
+          if ($exitCode -eq 0) {
+            Write-Host "Terraform plan completed with no changes."
+            exit 0
+          }
+
+          if ($exitCode -eq 2) {
+            Write-Error "Terraform detected infrastructure changes."
+            exit 1
+          }
+
+          Write-Error "Terraform plan failed with exit code $exitCode."
+          exit $exitCode
