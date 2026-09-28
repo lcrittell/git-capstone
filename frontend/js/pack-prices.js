@@ -20,7 +20,7 @@ try {
 
         packCard.innerHTML = `
             <h3>${pack.set}</h3>
-            <p>Standard Booster Pack</p>
+            <p>Play Booster Pack</p>
 
             <p>
                 Pack Price:
