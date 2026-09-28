@@ -2,6 +2,9 @@ name: Update Sealed Prices - Production
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'
+      timezone: 'America/Chicago'
 
 jobs:
   update-sealed-prices:
