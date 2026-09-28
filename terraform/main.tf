@@ -18,14 +18,14 @@ resource "vercel_project" "git_capstone" {
   }
 
   lifecycle {
-  ignore_changes = [
-    enable_affected_projects_deployments,
-    ignore_command,
-    oidc_token_config,
-    protection_bypass_for_automation_secret,
-    team_id,
-    vercel_authentication
-  ]
- }
+    ignore_changes = [
+      enable_affected_projects_deployments,
+      ignore_command,
+      oidc_token_config,
+      protection_bypass_for_automation_secret,
+      team_id,
+      vercel_authentication
+    ]
+  }
 }
 
