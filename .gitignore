@@ -7,3 +7,10 @@ __pycache__/
 
 # Pytest
 .pytest_cache/
+
+local-test.txt
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
