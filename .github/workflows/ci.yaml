@@ -36,6 +36,8 @@ jobs:
   
   terraform:
     runs-on: ubuntu-latest
+    env:
+      TF_VAR_vercel_api_token: ${{ secrets.VERCEL_API_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -55,3 +57,7 @@ jobs:
       - name: Terraform Validate
         working-directory: terraform
         run: terraform validate
+
+      - name: Terraform Plan
+        working-directory: terraform
+        run: terraform plan
