@@ -14,3 +14,5 @@ local-test.txt
 terraform/.terraform/
 terraform/*.tfstate
 terraform/*.tfstate.*
+
+local_update_sealed_prices.py
