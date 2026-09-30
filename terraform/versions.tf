@@ -4,6 +4,10 @@ terraform {
       source  = "vercel/vercel"
       version = "~> 2.0"
     }
+    render = {
+      source  = "render-oss/render"
+      version = "~> 1.0"
+    }
   }
 
   required_version = ">= 1.6.0"
