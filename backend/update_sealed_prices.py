@@ -9,6 +9,7 @@ sets = [
     "The Hobbit",
     "Secrets of Strixhaven",
     "Lorwyn Eclipsed",
+    "FINAL FANTASY",
 ]
 
 pack_prices = []

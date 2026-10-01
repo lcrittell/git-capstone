@@ -38,4 +38,10 @@ def get_pack_prices():
             "average_card_value": 999.00,
             "estimated_return": 999.00,
         },
+        {
+            "set": "FINAL FANTASY",
+            "pack_price": sealed_prices_by_set.get("FINAL FANTASY"),
+            "average_card_value": 999.00,
+            "estimated_return": 999.00,
+        },
     ]
