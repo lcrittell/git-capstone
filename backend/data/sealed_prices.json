@@ -2,29 +2,29 @@
     {
         "set": "The Hobbit",
         "product": "The Hobbit - Play Booster Pack",
-        "market_price": 5.37,
+        "market_price": 5.13,
         "tcgplayer_id": 692959,
-        "price_updated_at": "2026-10-07T01:50:11.160Z"
+        "price_updated_at": "2026-10-08T01:41:46.039Z"
     },
     {
         "set": "Secrets of Strixhaven",
         "product": "Secrets of Strixhaven - Play Booster Pack",
         "market_price": 4.87,
         "tcgplayer_id": 675554,
-        "price_updated_at": "2026-10-07T01:26:32.288Z"
+        "price_updated_at": "2026-10-08T01:19:02.753Z"
     },
     {
         "set": "Lorwyn Eclipsed",
         "product": "Lorwyn Eclipsed - Play Booster Pack",
-        "market_price": 4.76,
+        "market_price": 4.77,
         "tcgplayer_id": 656311,
-        "price_updated_at": "2026-10-07T00:20:59.601Z"
+        "price_updated_at": "2026-10-08T00:16:21.927Z"
     },
     {
         "set": "FINAL FANTASY",
         "product": "FINAL FANTASY - Play Booster Pack",
-        "market_price": 8.96,
+        "market_price": 8.9564,
         "tcgplayer_id": 618889,
-        "price_updated_at": "2026-10-07T01:09:34.928Z"
+        "price_updated_at": "2026-10-08T01:04:56.315Z"
     }
 ]
